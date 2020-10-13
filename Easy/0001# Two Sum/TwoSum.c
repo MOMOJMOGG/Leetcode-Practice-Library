@@ -91,6 +91,7 @@ void freeHashTable(struct hashnode** hashtable, int numSize)
     free(hashtable);                            // free pointer memory
 }
 
+// 2. twoSum algorithm 
 int* twoSum(int* nums, int numsSize, int target, int* returnSize){
     int i = 0;
     int index = 0;
@@ -112,10 +113,10 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
     for(i = 0 ; i< numsSize ; i++)
     {
         index = search(hashtable, target - nums[i], numsSize);
-        if(index == -1)                                // can't find answer in hashtable
+        if(index == -1)                                // can't find the answer in hashtable
             insert(hashtable, nums[i], i, numsSize);   // insert hashtable <value, key>
-        else
-        {
+        else                                           // find the answer in hashtable
+        {                                              // return result and free pointer
             result = (int *)malloc(sizeof(int)*2);
             result[0] = index;
             result[1] = i;
