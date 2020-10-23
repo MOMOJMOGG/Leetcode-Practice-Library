@@ -127,3 +127,11 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
     freeHashTable(hashtable, numsSize);
     return result;
 }
+
+/***
+■  Runtime : 8 ms
+■  Memory : 8 MB
+
+■  Time Complexity: O(n). 
+■  Space Complexity: O(1).
+***/
